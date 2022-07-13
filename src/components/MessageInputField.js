@@ -19,13 +19,13 @@ const MessageInputField = ({ name }) => {
   return (
     <div className={classes.root}>
       <Grid container>
-        <Grid xs={1} item={true}>
+        <Grid xs={1} item>
           <Avatar src={avatarPath} />
         </Grid>
-        <Grid xs={10} item={true}>
+        <Grid xs={10} item>
           <MessageField name={name} setText={setText} text={text} />
         </Grid>
-        <Grid xs={1} item={true}>ボタン</Grid>
+        <Grid xs={1} item>ボタン</Grid>
       </Grid>
     </div>
   );
