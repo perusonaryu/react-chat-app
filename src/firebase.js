@@ -1,14 +1,23 @@
 import firebase from 'firebase';
 
+const {
+    REACT_APP_FIREBASE_API_KEY,
+    REACT_APP_FIREBASE_AUTH_DOMAIL,
+    REACT_APP_FIREBASE_DATABASE_URL,
+    REACT_APP_FIREBASE_PROJECT_ID,
+    REACT_APP_FIREBASE_STORAGE_BUCKET,
+    REACT_APP_FIREBASE_MESSAGEING_SEDER_ID,
+    REACT_APP_FIREBASE_APP_ID,
+} = process.env
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD_a9WROpL7QWSNS4q-2Q7C1HbOmyrIYi8",
-    authDomain: "realtimechat-app-b57fc.firebaseapp.com",
-    databaseURL: "https://realtimechat-app-b57fc-default-rtdb.firebaseio.com",
-    projectId: "realtimechat-app-b57fc",
-    storageBucket: "realtimechat-app-b57fc.appspot.com",
-    messagingSenderId: "813349424765",
-    appId: "1:813349424765:web:090bfedb11953a47a82b14",
+    apiKey: REACT_APP_FIREBASE_API_KEY,
+    authDomain: REACT_APP_FIREBASE_AUTH_DOMAIL,
+    databaseURL: REACT_APP_FIREBASE_DATABASE_URL,
+    projectId:REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket:REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: REACT_APP_FIREBASE_MESSAGEING_SEDER_ID,
+    appId: REACT_APP_FIREBASE_APP_ID,
 };
 
 firebase.initializeApp(firebaseConfig);
