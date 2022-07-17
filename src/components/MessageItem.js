@@ -40,7 +40,7 @@ const MessageItem = ({ name, text, isLastItem }) => {
             className={classes.inline}
             color="textPrimary"
           >
-            name:{name},text:{text}
+            {text}
           </Typography>
         }
       />
