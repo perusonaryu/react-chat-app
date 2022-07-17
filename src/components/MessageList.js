@@ -7,7 +7,7 @@ import MessageItem from './MessageItem';
 const useStyles = makeStyles({
   root: {
     gridRow: 1,
-    overflow:'auto',
+    overflow: 'auto',
     width: '60%',
     margin: '0 auto',
   },
@@ -18,23 +18,31 @@ const MessageList = () => {
   const classes = useStyles();
 
   useEffect(() => {
-    messagesRef
-      .orderByKey()
-      .on('value', (snapshot) => {
-        const messages = snapshot.val();
-        if (messages === null) return;
-        const entries = Object.entries(messages);
-        const newMessages = entries.map((entry) => {
-          const [key, nameAndText] = entry;
-          return { key: key, ...nameAndText };
-        });
-        setMessages(newMessages);
+    messagesRef.orderByKey().on('value', (snapshot) => {
+      const messages = snapshot.val();
+      if (messages === null) return;
+      const entries = Object.entries(messages);
+      const newMessages = entries.map((entry) => {
+        const [key, nameAndText] = entry;
+        return { key: key, ...nameAndText };
       });
+      setMessages(newMessages);
+    });
   }, []);
+
+  const length = messages.length;
   return (
     <List className={classes.root}>
-      {messages.map(({ key, name, text }) => {
-        return <MessageItem key={key} name={name} text={text}></MessageItem>;
+      {messages.map(({ key, name, text }, index) => {
+        const isLastItem = length === index + 1;
+        return (
+          <MessageItem
+            key={key}
+            name={name}
+            text={text}
+            isLastItem={isLastItem}
+          />
+        );
       })}
     </List>
   );
