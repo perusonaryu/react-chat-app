@@ -1,4 +1,5 @@
-# React Starter Kit in TypeScript
+# Reactチャットアプリ
+チャットアプリ
 
 ## Node のインストール方法
 
